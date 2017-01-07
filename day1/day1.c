@@ -1,17 +1,35 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() 
+int main ()
 {
-    // Declare a variable named 'input_string' to hold our input.
-    char input_string[105]; 
+    int i = 4;
+    double d = 4.0;
+    char s[] = "HackerRank ";
+     // Declare second integer, double, and String variables.
+    int i2;
+    double d2;
+    char *s2;
+    s2 = malloc (100*sizeof(char));
     
-    // Read a full line of input from stdin and save it to our variable, input_string.
-    scanf("%[^\n]", input_string); 
+    scanf("%d\n", &i2);
+    scanf("%lf\n", &d2);
+    //printf ("took float and double\n");
+    //fflush(stdin);
+    fgets (s2, 100, stdin);
+    //scanf ("%[^\n]", s2);
+    //scanf("%10[0-9a-zA-Z ]", s2);
+    //printf ("%s\n", s2);
     
-    // Print a string literal saying "Hello, World." to stdout using printf.
-    printf("Hello, World.\n");
+    printf ("%d\n", i + i2);
     
-    printf ("%s\n", input_string);
+    // Print the sum of the double variables on a new line.
+    printf ("%.1f\n", d + d2);
     
+    // Concatenate and print the String variables on a new line
+    // The 's' variable above should be printed first.
+    printf ("%s%s\n", s, s2);
+    free (s2);
+
     return 0;
 }
